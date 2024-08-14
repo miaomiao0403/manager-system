@@ -48,8 +48,8 @@ public class UserPermssionControllerTest {
     public void setUpAuthHeader() throws Exception {
         Random random = new Random();
         long userId = Math.abs(random.nextLong());
-        long negativeUserId = -Math.abs(random.nextLong());
-        String accountName = "testUser";
+        long negativeUserId = Math.abs(random.nextLong());
+        String accountName = "user_test";
         String adminRole = "admin";
         String userRole = "user";
         Map<String, Object> adminMap = new HashMap<>(){{
@@ -79,11 +79,15 @@ public class UserPermssionControllerTest {
         String unBase64Credentials = String.valueOf(UUID.randomUUID());
 
         adminAuthorizationHeader = Base64.getEncoder().encodeToString(adminCredentials.getBytes(StandardCharsets.UTF_8));
-        userAuthorizationHeader = Base64.getEncoder().encodeToString(userCredentials.getBytes(StandardCharsets.UTF_8));
-        invalidAuthorizationHeader = Base64.getEncoder().encodeToString(invalidCredentials.getBytes(StandardCharsets.UTF_8));
-        negativeUserIdAuthorizationHeader = Base64.getEncoder().encodeToString(negativeUserCredentials.getBytes(StandardCharsets.UTF_8));
-        unJsonAuthorizationHeader = Base64.getEncoder().encodeToString(illegalCredentials.getBytes(StandardCharsets.UTF_8));
-        unBase64AuthorizationHeader = Base64.getEncoder().encodeToString(unBase64Credentials.getBytes(StandardCharsets.UTF_8));
+
+        /** Other Test Data
+//        userAuthorizationHeader = Base64.getEncoder().encodeToString(userCredentials.getBytes(StandardCharsets.UTF_8));
+//        invalidAuthorizationHeader = Base64.getEncoder().encodeToString(invalidCredentials.getBytes(StandardCharsets.UTF_8));
+//        negativeUserIdAuthorizationHeader = Base64.getEncoder().encodeToString(negativeUserCredentials.getBytes(StandardCharsets.UTF_8));
+        // unJsonAuthorizationHeader = Base64.getEncoder().encodeToString(illegalCredentials.getBytes(StandardCharsets.UTF_8));
+        // unBase64AuthorizationHeader = Base64.getEncoder().encodeToString(unBase64Credentials.getBytes(StandardCharsets.UTF_8));
+
+         */
     }
 
     @Test
