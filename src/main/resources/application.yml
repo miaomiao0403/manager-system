@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: manager-system
+  web:
+    resources:
+      add-mappings: false
+
+
+
+# data File
+datafile:
+  path: 'user-permisssion.txt'
